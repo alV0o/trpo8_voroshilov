@@ -77,32 +77,6 @@ namespace trpo7_voroshilov_pr
                 OnPropertyChanged();
             }
         }
-/*        private string _lastAppointment = "--.--.----";
-        public string LastAppointment
-        {
-            get
-            {
-                return _lastAppointment;
-            }
-            set
-            {
-                _lastAppointment = value;
-                OnPropertyChanged();
-            }
-        }
-        private int _lastDoctor = 0;
-        public int LastDoctor
-        {
-            get
-            {
-                return _lastDoctor;
-            }
-            set
-            {
-                _lastDoctor = value;
-                OnPropertyChanged();
-            }
-        }*/
         private string _diagnosis;
         [JsonIgnore]
         public string Diagnosis
@@ -132,19 +106,7 @@ namespace trpo7_voroshilov_pr
             }
         }
 
-        private ObservableCollection<Appointment> _appointmentStories = new ObservableCollection<Appointment>();
-        public ObservableCollection<Appointment> AppointmentStories
-        {
-            get
-            {
-                return _appointmentStories;
-            }
-            set
-            {
-                _appointmentStories = value;
-                OnPropertyChanged();
-            }
-        }
+        public ObservableCollection<Appointment> AppointmentStories { get; set; } = new ObservableCollection<Appointment>();
 
         private int _id = 0; 
         [JsonIgnore]
