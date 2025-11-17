@@ -9,16 +9,4 @@
     <Grid>
         <Frame Name="MainFrame" NavigationUIVisibility="Hidden"/>
     </Grid>
-    <!--<WrapPanel Grid.Row="1"
-                   Grid.ColumnSpan="3"
-                   Grid.Column="0"
-                   Background="LightGray"
-                   x:Name="StatusBar">
-            <Label Content="Всего JSON файлов:"/>
-            <Label Content="{Binding CountAll}"/>
-            <Label Content="Всего докторов:"/>
-            <Label Content="{Binding CountDoctors}"/>
-            <Label Content="Всего пациентов:"/>
-            <Label Content="{Binding CountPatients}"/>
-        </WrapPanel>-->
 </Window>

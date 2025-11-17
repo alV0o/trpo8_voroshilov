@@ -44,7 +44,7 @@
         <Grid DockPanel.Dock="Top">
             <Grid.RowDefinitions>
                 <RowDefinition/>
-                <RowDefinition Height="350"/>
+                <RowDefinition Height="200"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -93,5 +93,15 @@
                 </ListView.ItemTemplate>
             </ListView>
         </Grid>
+        <WrapPanel Background="LightGray"
+                   x:Name="StatusBar"
+                   DockPanel.Dock="Bottom">
+            <Label Content="Всего JSON файлов:"/>
+            <Label Content="{Binding CountAll}"/>
+            <Label Content="Всего докторов:"/>
+            <Label Content="{Binding CountDoctors}"/>
+            <Label Content="Всего пациентов:"/>
+            <Label Content="{Binding CountPatients}"/>
+        </WrapPanel>
     </DockPanel>
 </Page>

@@ -21,11 +21,13 @@ namespace trpo7_voroshilov_pr.Pages
     /// <summary>
     /// Логика взаимодействия для MainPage.xaml
     /// </summary>
+    /// 
     public partial class MainPage : Page
     {
         public ObservableCollection<Patient> Patients { get; set; } = new();
         public Patient SelectedPatient { get; set; }
         Doctor doctor = new Doctor();
+        JSONs jsons = new JSONs();
 
         public MainPage(Doctor _doctor)
         {
@@ -47,6 +49,26 @@ namespace trpo7_voroshilov_pr.Pages
 
             DataContext = this;
             InfoDoctor.DataContext = doctor;
+            
+            for (int i = 1; i <= 99999; i++)
+            {
+                if (File.Exists($"D_{i.ToString().PadLeft(5, '0')}.json"))
+                {
+                    jsons.CountDoctors++;
+                }
+                else break;
+            }
+            for (int i = 1; i <= 9999999; i++)
+            {
+                if (File.Exists($"P_{i.ToString().PadLeft(7, '0')}.json"))
+                {
+                    jsons.CountPatients++;
+                }
+                else break;
+            }
+            jsons.CountAll = jsons.CountDoctors + jsons.CountPatients;
+            StatusBar.DataContext = jsons;
+
         }
 
         private void AddPatient(object sender, RoutedEventArgs e)
